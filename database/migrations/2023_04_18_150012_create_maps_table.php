@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('maps', function (Blueprint $table) {
             $table->id();
+            $table->decimal('latitude', 10, 8);
+            $table->decimal('longitude', 10, 8);
+            $table->string('image');
+
+            $table->integer('zoom')->default('13');
+
+            $table->integer('height')->default('400');
+            $table->integer('width')->default('400');
             $table->timestamps();
         });
     }
